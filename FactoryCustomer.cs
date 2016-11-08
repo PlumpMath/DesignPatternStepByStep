@@ -8,5 +8,15 @@ namespace DesignPatternStepByStep
 {
     class FactoryCustomer
     {
+        private List<ICustomerInterface> customers = new List<ICustomerInterface>();
+        public FactoryCustomer()
+        {
+            customers.Add(new Lead());
+            customers.Add(new Customer());
+        }
+        public ICustomerInterface Create(int CustomerType)
+        {
+            return customers[CustomerType];
+        }
     }
 }
