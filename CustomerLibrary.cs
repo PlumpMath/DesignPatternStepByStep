@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatternStepByStep
 {
-    public class CustommerBase
+    public class CustomerBase : ICustomerInterface
     {
         public string CustomerName { get; set; }
         public string PhoneNumber { get; set; }
@@ -17,11 +17,10 @@ namespace DesignPatternStepByStep
         //the new classes can override the validate logic
         public virtual void Validate()
         {
-            // Let this be define by the child classes 
+           
         }
     }
-
-    public class Customer : CustommerBase
+    public class Customer : CustomerBase
     {
         public override void Validate()
         {
@@ -44,7 +43,7 @@ namespace DesignPatternStepByStep
         }
     }
 
-    public class Lead : CustommerBase
+    public class Lead : CustomerBase
     {
         public override void Validate()
         {
@@ -52,9 +51,10 @@ namespace DesignPatternStepByStep
             {
                 throw new Exception("Customer Name is required");
             }
+
             if (PhoneNumber.Length == 0)
             {
-                throw new Exception("Phone number is required");
+                throw new Exception("Phone Number is required");
             }
         }
     }

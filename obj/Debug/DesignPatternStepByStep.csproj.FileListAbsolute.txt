@@ -1,0 +1,1 @@
+c:\users\ttran230\documents\visual studio 2015\Projects\DesignPatternStepByStep\DesignPatternStepByStep\obj\Debug\DesignPatternStepByStep.csprojResolveAssemblyReference.cache
