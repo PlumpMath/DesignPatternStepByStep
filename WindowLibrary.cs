@@ -20,8 +20,7 @@ namespace DesignPatternStepByStep
         private void btnAdd_Click(object sender, EventArgs e)
 {
             ICustomerInterface custbase = null;
-            FactoryCustomer obj = new FactoryCustomer();
-            custbase = obj.Create(cmbCustomerType.SelectedIndex);
+            custbase = FactoryCustomer.Create(cmbCustomerType.SelectedIndex);
             custbase.CustomerName = txtCustomerName.Text;
             custbase.Address = txtAddress.Text;
             custbase.PhoneNumber = txtPhoneNumber.Text;

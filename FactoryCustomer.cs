@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DesignPatternStepByStep
 {
-    class FactoryCustomer
+    public static class FactoryCustomer
     {
-        private List<ICustomerInterface> customers = new List<ICustomerInterface>();
-        public FactoryCustomer()
+        private static List<ICustomerInterface> customers = new List<ICustomerInterface>();
+        static FactoryCustomer()
         {
             customers.Add(new Lead());
             customers.Add(new Customer());
         }
-        public ICustomerInterface Create(int CustomerType)
+        public static ICustomerInterface Create(int CustomerType)
         {
             return customers[CustomerType];
         }
