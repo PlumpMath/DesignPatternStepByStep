@@ -14,5 +14,6 @@ namespace DesignPatternStepByStep
          DateTime BillDate { get; set; }
          string Address { get; set; }
          void Validate();
+         ICustomerInterface Clone(); //added an extra method clone.
     }
 }

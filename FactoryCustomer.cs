@@ -24,7 +24,7 @@ namespace DesignPatternStepByStep
 
         public static ICustomerInterface Create(int CustomerType)
         {
-            return customers[CustomerType];
+            return customers.Value[CustomerType].Clone();
         }
     }
 }

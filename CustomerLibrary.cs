@@ -19,6 +19,11 @@ namespace DesignPatternStepByStep
         {
            
         }
+
+        public ICustomerInterface Clone()
+        {
+           return (ICustomerInterface) this.MemberwiseClone();
+        }
     }
     public class Customer : CustomerBase
     {
