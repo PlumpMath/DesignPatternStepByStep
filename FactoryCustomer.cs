@@ -8,14 +8,22 @@ namespace DesignPatternStepByStep
 {
     public static class FactoryCustomer
     {
-        private static List<ICustomerInterface> customers = new List<ICustomerInterface>();
-        static FactoryCustomer()
+        private static List<ICustomerInterface> customers = null;
+
+
+        private static void LoadCustomers()
         {
+            customers = new List<ICustomerInterface>();
             customers.Add(new Lead());
             customers.Add(new Customer());
         }
+
         public static ICustomerInterface Create(int CustomerType)
         {
+            if (customers == null)
+            {
+                LoadCustomers();
+            }
             return customers[CustomerType];
         }
     }
