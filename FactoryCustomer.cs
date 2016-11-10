@@ -16,7 +16,6 @@ namespace DesignPatternStepByStep
             cont = new UnityContainer();
             cont.RegisterType<ICustomerInterface, Lead="">("0");
             cont.RegisterType<ICustomerInterface, Customer="" > ("1");
-
         }
 
         public static ICustomerInterface Create(int CustomerType)

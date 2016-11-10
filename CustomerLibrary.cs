@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatternStepByStep
 {
-    public class CustomerBase : ICustomerInterface
+    public abstract class  CustomerBase : ICustomerInterface
     {
         public string CustomerName { get; set; }
         public string PhoneNumber { get; set; }
